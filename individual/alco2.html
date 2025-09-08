@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+	
+   </head>
+   <body>
+      <div id="preview-component" class="container-fluid full-screen" style="scroll-behavior: smooth;">
+         
+         <div class=" row-list">
+            <div class="row  align-items-center justify-content-center" style="opacity: 1; background: white;">
+               <div class="col-xs col-sm col-md col-lg  justify-content-between " style="padding: 1vmin 3%;">
+                  <div>
+                     <div style="display: flex; justify-content: center;">
+                        <nav class="navbar navbar-expand-xl navbar-light" style="background-color: rgb(255, 255, 255);">
+                           <span class="navbar-brand" style="color: rgb(34, 34, 34);"><img src="data:image/png;base64,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" width="250" class="d-inline-block align-top" alt="ALCO Logo"><span></span></span><button aria-controls="basic-navbar-nav" type="button" aria-label="Toggle navigation" class="navbar-toggler collapsed"><span class="navbar-toggler-icon"></span></button>
+                           <div class="navbar-collapse collapse" id="basic-navbar-nav">
+                              <div class="mr-auto navbar-nav"></div>
+                              <div class="ml-auto navbar-nav"></div>
+                           </div>
+                        </nav>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row  align-items-center justify-content-center" style="opacity: 1; height: 90vmin; background-image: url(&quot;https://i.postimg.cc/j2JRyWps/gidrj509509.jpg&quot;); background-position: center center; background-size: cover;">
+               <div class="col-xs col-sm col-md col-lg   ">
+                  <div>
+                     <div>
+                        <div style="text-align: center;">
+                           <div title="" class="" style="display: inline;">
+                              <h2 id="f04ebd5e-82d6-4088-8f90-6c40583ff547" class=" " style="font-size: clamp(3rem, 2.287rem + 3.0421vw, 5.9375rem); color: rgb(255, 255, 255); font-family: poppins; text-shadow: rgba(0, 0, 0, 0.5) 2px 2px 5px; font-weight: 700; max-width: 800px; margin: auto; line-height: 1.2;">Domestic Doors and Windows</h2>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row   " style="opacity: 1; padding-top: 50px;">
+               <div class="col-xs col-sm col-md col-lg align-items-center justify-content-center d-flex">
+                  <div>
+                     <div>
+                        <div style="text-align: center;">
+                           <div title="" class="" style="display: inline;">
+                              <h2 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" "></h2>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="margin-right: 10px; text-align: center;">
+                           <div title="" class="" style="display: inline;">
+                              <h2 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(2.375rem, 2.0716rem + 1.2945vw, 3.625rem); color: rgb(0, 127, 188); font-family: poppins; font-weight: 600;">Why buy</h2>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: center;">
+                           <div title="" class="" style="display: inline;">
+                              <h2 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(2.375rem, 2.0716rem + 1.2945vw, 3.625rem); color: rgb(238, 33, 46); font-family: poppins; font-weight: 600;">ALCO ? </h2>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row   " style="opacity: 1;">
+               <div class="col-xs col-sm col-md col-lg   ">
+                  <div>
+                     <div>
+                        <div style="text-align: center;">
+                           <div title="" class="" style="display: inline;"><img src="http://137.184.41.180:82/api/1c9551d6-2159-42f1-8233-714f87b6413a.png" class="img-fluid" alt="sample image"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="margin-bottom: 20px; text-align: center;">
+                           <div title="" class="" style="display: inline;">
+                              <h4 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(1rem, 0.9697rem + 0.1294vw, 1.125rem); color: rgb(103, 104, 107); font-family: poppins; font-weight: 400; line-height: 160%; max-width: 880px; margin: auto;">ALCO Aluminium offers the perfect balance of quality and affordability. Designed with precision and built to last, our products deliver exceptional performance at a competitive price. Whether for industrial, commercial, or residential use, ALCO is a true value for money choice trusted for its durability, safety, and consistent quality.</h4>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row   " style="opacity: 1; background: rgb(231, 231, 231); margin: 20px 1% 0px; border-radius: 20px 20px 0px 0px;">
+               <div class="col-xs-12 col-sm-12 col-md col-lg   " style="padding: 5vmin;">
+                  <div>
+                     <div>
+                        <div style="margin-bottom: 10px; text-align: left;">
+                           <div title="" class="" style="display: inline;"><img src="http://137.184.41.180:82/api/45fff508-d203-42db-89c9-75dcb079319c.png" class="img-fluid" alt="sample image"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;">
+                              <h4 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(1.125rem, 1.0795rem + 0.1942vw, 1.3125rem); color: rgb(0, 0, 0); font-family: poppins; font-weight: 600;">Recyclable Materials</h4>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;"><img src="http://137.184.41.180:82/api/1c9551d6-2159-42f1-8233-714f87b6413a.png" class="img-fluid" alt="sample image"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;">
+                              <h5 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(1rem, 0.9697rem + 0.1294vw, 1.125rem); color: rgb(103, 104, 107); font-family: poppins; font-weight: 400;">We believe in building a better future. By using high-quality recycled aluminium, we reduce environmental impact, conserve natural resources, and deliver durable, eco-friendly products—without compromising on strength or performance. Sustainability is not just a choice; it's our commitment.</h5>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-12 col-md col-lg   " style="padding: 5vmin;">
+                  <div>
+                     <div>
+                        <div style="margin-bottom: 10px; text-align: left;">
+                           <div title="" class="" style="display: inline;"><img src="http://137.184.41.180:82/api/c4251981-81cb-47f8-ab77-93b4afb4ff92.png" class="img-fluid" alt="sample image"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;">
+                              <h4 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(1.125rem, 1.0795rem + 0.1942vw, 1.3125rem); color: rgb(0, 0, 0); font-family: poppins; font-weight: 600;">Eco-friendly Products</h4>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;"><img src="http://137.184.41.180:82/api/1c9551d6-2159-42f1-8233-714f87b6413a.png" class="img-fluid" alt="sample image"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;">
+                              <h5 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(1rem, 0.9697rem + 0.1294vw, 1.125rem); color: rgb(103, 104, 107); font-family: poppins; font-weight: 400;">We are committed to sustainability. Our eco-friendly products are crafted using recyclable aluminium, reducing environmental impact while maintaining superior quality and performance. By choosing ALCO, you're not just investing in durable solutions—you're supporting a greener, cleaner future.</h5>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-12 col-md col-lg   " style="padding: 5vmin;">
+                  <div>
+                     <div>
+                        <div style="margin-bottom: 10px; text-align: left;">
+                           <div title="" class="" style="display: inline;"><img src="http://137.184.41.180:82/api/ec7fc1e6-5e26-4dab-aa39-973c04e1d60d.png" class="img-fluid" alt="sample image"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;">
+                              <h4 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(1.125rem, 1.0795rem + 0.1942vw, 1.3125rem); color: rgb(0, 0, 0); font-family: poppins; font-weight: 600;">10 Years Warranty</h4>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;"><img src="http://137.184.41.180:82/api/1c9551d6-2159-42f1-8233-714f87b6413a.png" class="img-fluid" alt="sample image"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;">
+                              <h5 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(1rem, 0.9697rem + 0.1294vw, 1.125rem); color: rgb(103, 104, 107); font-family: poppins; font-weight: 400;">Every ALCO Aluminium product comes with a 10-year standard warranty—our promise of lasting quality and reliability. This warranty reflects our confidence in the durability, performance, and craftsmanship of our products, giving you peace of mind with every purchase.</h5>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-12 col-md col-lg   " style="padding: 5vmin;">
+                  <div>
+                     <div>
+                        <div style="margin-bottom: 10px; text-align: left;">
+                           <div title="" class="" style="display: inline;"><img src="http://137.184.41.180:82/api/25e4b25e-c091-44a0-9ad1-685c0179c644.png" class="img-fluid" alt="sample image"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;">
+                              <h4 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(1.125rem, 1.0795rem + 0.1942vw, 1.3125rem); color: rgb(0, 0, 0); font-family: poppins; font-weight: 600;">Diverse Products</h4>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;"><img src="http://137.184.41.180:82/api/1c9551d6-2159-42f1-8233-714f87b6413a.png" class="img-fluid" alt="sample image"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;">
+                              <h5 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(1rem, 0.9697rem + 0.1294vw, 1.125rem); color: rgb(103, 104, 107); font-family: poppins; font-weight: 400;">ALCO Aluminium offers a wide and versatile range of products to meet the needs of various industries and applications. From ladders to architectural systems like windows and doors. our solutions combine functionality, safety, and style—ensuring the right fit for every project.</h5>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row   " style="opacity: 1; background: rgb(231, 231, 231); margin: 0px 1% 50px; border-radius: 0px 0px 20px 20px;">
+               <div class="col-xs-12 col-sm-12 col-md col-lg   " style="padding: 5vmin;">
+                  <div>
+                     <div>
+                        <div style="margin-bottom: 10px; text-align: left;">
+                           <div title="" class="" style="display: inline;"><img src="http://137.184.41.180:82/api/be978121-4a75-4881-9dbd-dcaa2967805e.png" class="img-fluid" alt="sample image"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;">
+                              <h4 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(1.125rem, 1.0795rem + 0.1942vw, 1.3125rem); color: rgb(0, 0, 0); font-family: poppins; font-weight: 600;">Competitive Pricing</h4>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;"><img src="http://137.184.41.180:82/api/1c9551d6-2159-42f1-8233-714f87b6413a.png" class="img-fluid" alt="sample image"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;">
+                              <h5 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(1rem, 0.9697rem + 0.1294vw, 1.125rem); color: rgb(103, 104, 107); font-family: poppins; font-weight: 400;">ALCO Aluminium delivers high quality solutions at competitive prices, ensuring you get the best value without compromising on performance or reliability.</h5>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-12 col-md col-lg   " style="padding: 5vmin;">
+                  <div>
+                     <div>
+                        <div style="margin-bottom: 10px; text-align: left;">
+                           <div title="" class="" style="display: inline;"><img src="http://137.184.41.180:82/api/33674c38-bfb9-4cde-8f05-308462f496bf.png" class="img-fluid" alt="sample image"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;">
+                              <h4 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(1.125rem, 1.0795rem + 0.1942vw, 1.3125rem); color: rgb(0, 0, 0); font-family: poppins; font-weight: 600;">Durable &amp; Long-lasting</h4>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;"><img src="http://137.184.41.180:82/api/1c9551d6-2159-42f1-8233-714f87b6413a.png" class="img-fluid" alt="sample image"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;">
+                              <h5 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(1rem, 0.9697rem + 0.1294vw, 1.125rem); color: rgb(103, 104, 107); font-family: poppins; font-weight: 400;">Built to endure, ALCO Aluminium products are designed for long-lasting performance. With superior materials and precision engineering, they offer strength, reliability, and years of dependable use.</h5>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-12 col-md col-lg   " style="padding: 5vmin;">
+                  <div>
+                     <div>
+                        <div style="margin-bottom: 10px; text-align: left;">
+                           <div title="" class="" style="display: inline;"><img src="http://137.184.41.180:82/api/d35b16b2-261b-40e4-831e-928a62861f95.png" class="img-fluid" alt="sample image"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;">
+                              <h4 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(1.125rem, 1.0795rem + 0.1942vw, 1.3125rem); color: rgb(0, 0, 0); font-family: poppins; font-weight: 600;">Safety Standards</h4>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;"><img src="http://137.184.41.180:82/api/1c9551d6-2159-42f1-8233-714f87b6413a.png" class="img-fluid" alt="sample image"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;">
+                              <h5 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(1rem, 0.9697rem + 0.1294vw, 1.125rem); color: rgb(103, 104, 107); font-family: poppins; font-weight: 400;">International safety certifications like ISO 9001, SLS &amp; Quali coat &amp; Quali Node</h5>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-12 col-md col-lg   " style="padding: 5vmin;">
+                  <div>
+                     <div>
+                        <div style="margin-bottom: 10px; text-align: left;">
+                           <div title="" class="" style="display: inline;"><img src="http://137.184.41.180:82/api/f41c0a91-63b3-4c2d-8724-12763b145323.png" class="img-fluid" alt="sample image"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;">
+                              <h4 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(1.125rem, 1.0795rem + 0.1942vw, 1.3125rem); color: rgb(0, 0, 0); font-family: poppins; font-weight: 600;">Low Maintenance</h4>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;"><img src="http://137.184.41.180:82/api/1c9551d6-2159-42f1-8233-714f87b6413a.png" class="img-fluid" alt="sample image"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;">
+                              <h5 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(1rem, 0.9697rem + 0.1294vw, 1.125rem); color: rgb(103, 104, 107); font-family: poppins; font-weight: 400;">ALCO's aluminium products resist rust and weather damage, so they require minimal upkeep saving money in the long run.</h5>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row   " style="opacity: 1; padding-top: 30px; border-top: 1px solid rgb(195, 195, 195);">
+               <div class="col-xs col-sm col-md col-lg align-items-center justify-content-center d-flex">
+                  <div>
+                     <div>
+                        <div style="margin-right: 15px; text-align: center;">
+                           <div title="" class="" style="display: inline;">
+                              <h2 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(2.375rem, 2.0716rem + 1.2945vw, 3.625rem); color: rgb(238, 33, 46); font-family: poppins; font-weight: 600;">ALCO</h2>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: center;">
+                           <div title="" class="" style="display: inline;">
+                              <h2 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(2.375rem, 2.0716rem + 1.2945vw, 3.625rem); color: rgb(0, 127, 188); font-family: poppins; font-weight: 600;">Products</h2>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row   " style="opacity: 1;">
+               <div class="col-xs col-sm col-md col-lg   ">
+                  <div>
+                     <div>
+                        <div style="text-align: center;">
+                           <div title="" class="" style="display: inline;">
+                              <h4 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(1rem, 0.9697rem + 0.1294vw, 1.125rem); color: rgb(103, 104, 107); font-family: poppins; font-weight: 400; line-height: 160%; max-width: 880px; margin: auto;">ALCO Aluminium offers a wide range of high-quality products, from ladders and scaffolding to architectural solutions. Designed for durability and long-lasting performance, our products provide exceptional value at competitive prices.</h4>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row   " style="opacity: 1; padding-top: 20px;">
+               <div class="col-xs col-sm col-md col-lg   ">
+                  <div>
+                     <div>
+                        <div class="" data-tabs="true" style="text-align: center; font-family: poppins; font-size: clamp(0.9375rem, 0.9072rem + 0.1294vw, 1.0625rem); padding: 20px 0px;">
+							
+							<div style="margin: 0 auto; text-align: center; align-content: center;">
+							<!-- Nav tabs -->
+  <ul class="nav nav-tabs justify-content-center" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-bs-toggle="tab" href="#home">Casements</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#menu1">Sliding</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#menu2">Doors</a>
+    </li>
+	<li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#menu3">Shopfront</a>
+    </li>
+	<li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#menu4">Partitions</a>
+    </li>
+	<li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#menu5">Showcase</a>
+    </li>
+	<li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#menu6">Hardware</a>
+    </li>
+  </ul>
+						 </div>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div id="home" class="container tab-pane active"><br>
+		<table align="center">
+			<tr>
+				<td><img src="http://137.184.41.180:82/api/9667fd2a-977c-4c2f-b18b-cdc49bc1d7a2.jpg"><br>CASEMENT</td>
+				<td><img src="http://137.184.41.180:82/api/9d58c830-8425-48e1-8966-1b79d16c051b.jpg"><br>CASEMENT DIVIDED</td>
+				<td><img src="http://137.184.41.180:82/api/5e7a25ce-ddf9-433e-80a9-932ab4e9ca76.jpg"><br>FIXED & CASEMENT</td>
+			</tr>
+		</table>
+    </div>
+	  
+    <div id="menu1" class="container tab-pane fade">
+      	<table align="center">
+			<tr>
+				<td><img src="http://137.184.41.180:82/api/e142665d-711c-4291-adf4-2e0edb5145f1.jpg"><br>SLIDING</td>
+				<td><img src="http://137.184.41.180:82/api/4cbcec74-ba65-4218-a2e0-0366f698cd10.jpg"><br>SLIDING & LOUVER</td>
+			</tr>
+		</table>
+    </div>  
+	  
+	<div id="menu2" class="container tab-pane fade">
+      	<table align="center">
+			<tr>
+				<td><img src="http://137.184.41.180:82/api/d8bb7df3-d7e5-41dd-8e10-1dc2a20216a1.jpg"><br>DOUBLE DOOR</td>
+				<td><img src="http://137.184.41.180:82/api/1d35de6c-ae7c-46c5-a3a4-64d56c70a1f2.jpg"><br>DOUBLE DOOR - LAPPED</td>
+			</tr>
+		</table>
+    </div> 
+	
+	<div id="menu3" class="container tab-pane fade">
+      	<table align="center">
+			<tr>
+				<td><img src="http://137.184.41.180:82/api/b8d8944d-a960-4f9e-b1d4-45f34f393f21.jpg"><br>SHOPFRONT</td>
+			</tr>
+		</table>
+    </div> 
+	  
+	<div id="menu4" class="container tab-pane fade">
+      	<table align="center">
+			<tr>
+				<td><img src="http://137.184.41.180:82/api/9e22d1b7-f3c6-48b9-848e-3059fec01305.jpg"><br>PARTITION</td>
+				<td><img src="http://137.184.41.180:82/api/4959cca1-d235-4861-8b4c-0f237fc0aea6.jpg"><br>PARTITION</td>
+			</tr>
+		</table>
+    </div>
+	
+	<div id="menu5" class="container tab-pane fade">
+    </div>
+	  
+	<div id="menu6" class="container tab-pane fade">
+		
+		<br><br>
+		<ul class="nav nav-tabs" role="tablist">
+			<li class="nav-item">
+			  <a class="nav-link active" data-bs-toggle="tab" href="#hom">Smart Cabinet</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" data-bs-toggle="tab" href="#men1">Rectangular & Square Pipes</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" data-bs-toggle="tab" href="#men2">Single Channel and Double Channel</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" data-bs-toggle="tab" href="#men3">Equal Angle and Unequal Angle</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" data-bs-toggle="tab" href="#men4">Miscellaneous</a>
+			</li>
+		  </ul>
+		
+		
+			<div class="tab-content">
+				<div id="hom" class="container tab-pane active"><br>
+					<table align="center">
+						<tr>
+							<td><img src="http://137.184.41.180:82/api/2a228e66-1f68-4534-bae7-ed77e75e27d2.jpg"></td>
+						</tr>
+					</table>
+				</div>
+				<div id="men1" class="container tab-pane"><br>
+					<table align="center">
+						<tr>
+							<td><img src="http://137.184.41.180:82/api/c542205a-e801-46f4-8699-00af2ab0846e.jpg"></td>
+						</tr>
+					</table>
+				</div>
+				<div id="men2" class="container tab-pane"><br>
+					<table align="center">
+						<tr>
+							<td><img src="http://137.184.41.180:82/api/86b11018-5393-49ba-bf8d-297d16f0eb2b.png"></td>
+						</tr>
+					</table>
+				</div>
+				<div id="men3" class="container tab-pane"><br>
+					<table align="center">
+						<tr>
+							<td><img src="http://137.184.41.180:82/api/777e55b6-8914-4862-be81-6eee579d5e80.png"></td>
+						</tr>
+					</table>
+				</div>
+				<div id="men4" class="container tab-pane"><br>
+					<table align="center">
+						<tr>
+							<td><img src="http://137.184.41.180:82/api/c5e45bb5-511a-48b5-8150-e2da4a270a13.jpg"></td>
+						</tr>
+					</table>
+				</div>
+				
+			</div>
+		
+		
+		
+    </div>
+	  
+	  
+	  
+	  
+							</div>
+							
+							
+							
+                           
+                           
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row   " style="opacity: 1; margin: 20px 1%; border-radius: 20px; background-image: url(&quot;https://i.postimg.cc/NM6pkSvY/101941-1.jpg&quot;); background-size: cover; padding: 50px 0px 60px;">
+               <div class="col-xs col-sm col-md col-lg   ">
+                  <div>
+                     <div>
+                        <div style="margin-top: 20px; text-align: center;">
+                           <div title="" class="" style="display: inline;"><img src="http://137.184.41.180:82/api/6e269c83-f5b2-433b-aa17-59456805d47d.png" class="img-fluid" alt="sample image" style="width: 8vmin;"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="margin-right: 10px; text-align: center;">
+                           <div title="" class="" style="display: inline;">
+                              <h3 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(2.375rem, 2.0716rem + 1.2945vw, 3.625rem); color: rgb(0, 127, 188); font-family: poppins; font-weight: 600;">ALCO Dealer Store Locations</h3>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: center;">
+                           <div title="" class="" style="display: inline;">
+                              <h4 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(1rem, 0.9697rem + 0.1294vw, 1.125rem); color: rgb(103, 104, 107); font-family: poppins; font-weight: 400; line-height: 160%; max-width: 880px; margin: auto;">Explore our dealer store locations to find the one nearest you</h4>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: center;">
+                           <label for="26fc2090-1319-4016-a355-b81f95cd1752" style="font-size: clamp(1.125rem, 0.9885rem + 0.5825vw, 1.6875rem); font-family: poppins; color: black;">Search Location</label>
+                           <div title="" class="" style="display: inline;">
+                              <div class="was-validated form-group" style="margin-right: 50px; margin-bottom: 20px; margin-left: 50px; text-align: center;"><input id="6b28c512-774b-4644-af19-81c9a7479502" type="text" class="form-control " placeholder="" style="padding: 10px; border: 1px solid rgb(210, 207, 207); max-width: 150vmin; margin: auto;"></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: left;">
+                           <div title="" class="" style="display: inline;">
+                              <table class="table table-dark" style="max-width: 150vmin; margin: auto;">
+                                 <thead class="" style="background: rgb(238, 33, 46); font-size: clamp(1rem, 0.9697rem + 0.1294vw, 1.125rem);">
+                                    <tr>
+                                       <th scope="col">Dealer Name</th>
+                                       <th scope="col">Province</th>
+                                       <th scope="col">Address</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr class="">
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">KAJANAN GLASS CENTER</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">NORTHERN</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">43/3 Main street, Chankanai</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    <tr class="">
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">NORTH LANKA DISTRIBUTOR</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">NORTHERN</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">Vanniyasingham veethi, Uduvil</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    <tr class="">
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">GLORY ALUMINIUM FABRICATORS</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">NORTHERN</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">Anton Sinnappa</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    <tr class="">
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">ASIA INTERIOR DESIGNERS</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">NORTHERN</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">No; 355, K.K.S. Road, Muddaas Kadai Junction, Jaffna</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    <tr class="">
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">GLORY ALUMINIUM FABRICATORS</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">NORTHERN</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">11/6 Stanley Rd Jaffna</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    <tr class="">
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">VR1 ALUMINIUM</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">NORTHERN</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">No;71A, Kanthaswamy kovil Rd, Vavuniya</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    <tr class="">
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">SRIKANNA ALUMINIYA FITTING</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">NORTHERN</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">A9 Road, Pallai, Jaffna</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    <tr class="">
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">ARANILA PICTURE PALAC</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">NORTHERN</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">No. 05, Kanagapuram Road, Kilinochchi</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    <tr class="">
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">THARNY BUILDERS</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">NORTHERN</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">A9 Beach Road, Kurunagar, Jaffna</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    <tr class="">
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">K T S GLASS HOUSE</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">NORTHERN</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                       <td class="" width="" height="">
+                                          <div class="row ">
+                                             <div class="col">
+                                                <div>
+                                                   <div>
+                                                      <div style="text-align: left;">
+                                                         <div title="" class="" style="display: inline;"><span id="d864f3cd-2041-4ae1-81cc-968f2396a95d" class=" " style="font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);">K T S GLASS HOUSE, Main Street, Puthukkudiyiruppu</span></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row   " style="opacity: 1; margin: 20px 1%;">
+               <div class="col-xs col-sm col-md col-lg   " style="padding: 0px;">
+                  <div>
+                     <div>
+                        <div style="text-align: center;">
+                           <div title="" class="" style="display: inline;"><img src="http://137.184.41.180:82/api/ee2d0bac-4e82-41b9-96f6-aa6c45089cd7.jpg" class="img-fluid" alt="sample image" style="height: 80vmin; border-radius: 20px; margin: auto; object-fit: cover;"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row   " style="opacity: 1; background: rgb(231, 231, 231); margin: 20px 1%; border-radius: 20px; padding: 5vmin 50px 10vmin;">
+               <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6   " style="padding: 0px 8vmin;">
+                  <div>
+                     <div>
+                        <div style="margin-top: 30px; margin-bottom: 10px; text-align: center;">
+                           <div title="" class="" style="display: inline;"><img src="http://137.184.41.180:82/api/11c9dbc6-b51e-4657-97ce-0647ab31947a.png" class="img-fluid" alt="sample image"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: center;">
+                           <div title="" class="" style="display: inline;">
+                              <h4 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(1.5rem, 1.4393rem + 0.2589vw, 1.75rem); color: rgb(0, 127, 188); font-family: poppins; font-weight: 600;">Email</h4>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: center;">
+                           <div title="" class="" style="display: inline;">
+                              <h5 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(1.0625rem, 1.0473rem + 0.0647vw, 1.125rem); color: rgb(103, 104, 107); font-family: poppins; font-weight: 400;">For inquiries or support, please contact us via email.  Our team will respond promptly to assist you.</h5>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: center;">
+                           <div title="" class="" style="display: inline;"><button id="1a400a3c-22af-4ca8-ab82-48bdddddb377" class="btn btn btn-link btn-sm " style="font-size: clamp(1.125rem, 1.0795rem + 0.1942vw, 1.3125rem); font-family: poppins; color: rgb(238, 33, 46); padding: 0px; text-decoration: underline;">info@alumexgroup.com</button></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6   " style="padding: 0px 8vmin;">
+                  <div>
+                     <div>
+                        <div style="margin-top: 30px; margin-bottom: 10px; text-align: center;">
+                           <div title="" class="" style="display: inline;"><img src="http://137.184.41.180:82/api/ef2bbfcc-254d-406f-89c9-06f8eaaad182.png" class="img-fluid" alt="sample image"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: center;">
+                           <div title="" class="" style="display: inline;">
+                              <h4 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(1.5rem, 1.4393rem + 0.2589vw, 1.75rem); color: rgb(0, 127, 188); font-family: poppins; font-weight: 600;">Hotline</h4>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: center;">
+                           <div title="" class="" style="display: inline;">
+                              <h5 id="9aa21b97-bbb0-438d-9e80-a55f2ccd4e92" class=" " style="font-size: clamp(1.0625rem, 1.0473rem + 0.0647vw, 1.125rem); color: rgb(103, 104, 107); font-family: poppins; font-weight: 400;">Our hotline is available during business hours to provide  you with prompt and reliable support</h5>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: center;">
+                           <div title="" class="" style="display: inline;"><button id="1a400a3c-22af-4ca8-ab82-48bdddddb377" class="btn btn btn-link btn-sm " style="font-size: clamp(1.125rem, 1.0795rem + 0.1942vw, 1.3125rem); font-family: poppins; color: rgb(238, 33, 46); padding: 0px; text-decoration: underline;">+94 777552992</button></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row   " style="opacity: 1; background: rgb(238, 33, 46); margin: 20px 1%; border-radius: 20px; padding: 12vmin 0px;">
+               <div class="col-xs col-sm col-md col-lg align-items-center justify-content-center d-flex">
+                  <div>
+                     <div>
+                        <div style="text-align: center;">
+                           <div title="" class="" style="display: inline;"><img src="http://137.184.41.180:82/api/bc5ba164-c4a2-4972-bada-3d5b43ac05aa.png" class="img-fluid" alt="sample image" style="max-width: 30vmin;"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div>
+                        <div style="text-align: end;">
+                           <div title="" class="" style="display: inline;">
+                              <table class="table undefined" style="border-top: 1px solid white;">
+                                 <thead style="display: none;">
+                                    <tr>
+                                       <th scope="col" style="border-bottom: 0px; border-top: 0px;">Heading</th>
+                                       <th scope="col" style="border-bottom: 0px; border-top: 0px;">Heading</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody></tbody>
+                              </table>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+	   
+	   
+	   <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- GPT Engineer script - DO NOT REMOVE -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+	   
+   </body>
+</html>
