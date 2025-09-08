@@ -1,0 +1,1 @@
+<strong>Copyright &copy; 2021 <a href="https://ezyblu.com">EzyBlu</a>.</strong> All rights reserved.
